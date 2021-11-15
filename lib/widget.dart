@@ -4,7 +4,7 @@ class TaskCardWidget extends StatelessWidget {
   final String title;
   final String desc;
 
-  TaskCardWidget({required this.title, required this.desc});
+  TaskCardWidget({this.title, this.desc});
 
   @override
   Widget build(BuildContext context) {
@@ -18,6 +18,14 @@ class TaskCardWidget extends StatelessWidget {
         bottom: 20.0,
       ),
       decoration: BoxDecoration(
+        boxShadow: [
+          BoxShadow(
+            color: Colors.grey.withOpacity(0.8),
+            spreadRadius: 0,
+            blurRadius: 1,
+            offset: Offset(0, 1), // changes position of shadow
+          ),
+        ],
         color: Colors.white,
         borderRadius: BorderRadius.circular(20.0),
       ),
@@ -37,7 +45,7 @@ class TaskCardWidget extends StatelessWidget {
               top: 10.0,
             ),
             child: Text(
-              desc ?? ("No Description Added."),
+              desc ?? "No Description Added.",
               style: TextStyle(
                 fontSize: 16.0,
                 color: Color(0xFF86829D),
@@ -49,5 +57,61 @@ class TaskCardWidget extends StatelessWidget {
         ],
       ),
     );
+  }
+}
+
+class TodoWidget extends StatelessWidget {
+  final String text;
+  final bool isChecked;
+  TodoWidget({this.text, this.isChecked});
+
+  @override
+  Widget build(BuildContext context) {
+    return Container(
+      padding: EdgeInsets.symmetric(
+        horizontal: 24.0,
+        vertical: 8.0,
+      ),
+      child: Row(
+        children: [
+          Container(
+            width: 20,
+            height: 20,
+            margin: EdgeInsets.only(
+              right: 12.0,
+            ),
+            decoration: BoxDecoration(
+              color: isChecked ? Color(0xFF89B0AE) : Colors.transparent,
+              borderRadius: BorderRadius.circular(6.0),
+              border: isChecked ? null : Border.all(
+                color: Color(0xFF89B0AE),
+                width: 1.5,
+              ),
+            ),
+            child: Image(
+              image: AssetImage(
+                'assets/images/check_icon.png'
+              ),
+            ),
+          ),
+          Text(
+              text ?? "Unnamed Todo",
+              style: TextStyle(
+                color: isChecked ? Color(0xFF555B6E) : Color(0XFF86829D),
+                fontSize: 16.0,
+                fontWeight: isChecked ? FontWeight.bold : FontWeight.w500,
+          ),
+          ),
+        ],
+      ),
+    );
+  }
+}
+
+class NoGlowBehaviour extends ScrollBehavior {
+  @override
+  Widget buildViewportChrome(
+      BuildContext context, Widget child, AxisDirection axisDirection) {
+    return child;
   }
 }

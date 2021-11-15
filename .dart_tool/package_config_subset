@@ -110,6 +110,14 @@ source_span
 2.12
 file:///E:/Program%20Files/Android/flutter/.pub-cache/hosted/pub.dartlang.org/source_span-1.8.1/
 file:///E:/Program%20Files/Android/flutter/.pub-cache/hosted/pub.dartlang.org/source_span-1.8.1/lib/
+sqflite
+2.12
+file:///E:/Program%20Files/Android/flutter/.pub-cache/hosted/pub.dartlang.org/sqflite-2.0.0+4/
+file:///E:/Program%20Files/Android/flutter/.pub-cache/hosted/pub.dartlang.org/sqflite-2.0.0+4/lib/
+sqflite_common
+2.12
+file:///E:/Program%20Files/Android/flutter/.pub-cache/hosted/pub.dartlang.org/sqflite_common-2.0.1+1/
+file:///E:/Program%20Files/Android/flutter/.pub-cache/hosted/pub.dartlang.org/sqflite_common-2.0.1+1/lib/
 stack_trace
 2.12
 file:///E:/Program%20Files/Android/flutter/.pub-cache/hosted/pub.dartlang.org/stack_trace-1.10.0/
@@ -122,6 +130,10 @@ string_scanner
 2.12
 file:///E:/Program%20Files/Android/flutter/.pub-cache/hosted/pub.dartlang.org/string_scanner-1.1.0/
 file:///E:/Program%20Files/Android/flutter/.pub-cache/hosted/pub.dartlang.org/string_scanner-1.1.0/lib/
+synchronized
+2.12
+file:///E:/Program%20Files/Android/flutter/.pub-cache/hosted/pub.dartlang.org/synchronized-3.0.0/
+file:///E:/Program%20Files/Android/flutter/.pub-cache/hosted/pub.dartlang.org/synchronized-3.0.0/lib/
 term_glyph
 2.12
 file:///E:/Program%20Files/Android/flutter/.pub-cache/hosted/pub.dartlang.org/term_glyph-1.2.0/
@@ -159,7 +171,7 @@ flutter_test
 file:///E:/Program%20Files/Android/flutter/packages/flutter_test/
 file:///E:/Program%20Files/Android/flutter/packages/flutter_test/lib/
 cs4750_app
-2.12
+2.11
 file:///E:/Projects/CS4750_App/
 file:///E:/Projects/CS4750_App/lib/
 2
