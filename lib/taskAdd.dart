@@ -273,14 +273,15 @@ class _TaskAddState extends State<TaskAdd> {
                 visible: !_contentVisible,
                 child: Container(
                   margin: EdgeInsets.only(
-                      top: 300.0,
+                      top: 0.0,
+                      left: 275.0,
                   ),
                   child: Image(
                     image: AssetImage(
                       "assets/images/new_task_pal.png",
                     ),
-                    height: 200.0,
-                    width: 200.0,
+                    height: 150.0,
+                    width: 150.0,
                   ),
                 ),
               ),
