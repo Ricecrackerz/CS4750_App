@@ -71,10 +71,13 @@ class _TodoState extends State<Todo> {
                                         context, MaterialPageRoute(builder: (context) => TaskAdd(
                                       task: snapshot.data[index],
                                     ))
-                                    );
+                                    ).then((value) {
+                                      setState(() {});
+                                    });
                                   },
                                   child: TaskCardWidget(
                                     title: snapshot.data[index].title,
+                                    desc: snapshot.data[index].description,
                                   ),
                                 );
                               },
