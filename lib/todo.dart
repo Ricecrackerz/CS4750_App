@@ -65,8 +65,17 @@ class _TodoState extends State<Todo> {
                           child: ListView.builder(
                             itemCount: snapshot.data.length,
                               itemBuilder: (context, index){
-                                return TaskCardWidget(
-                                  title: snapshot.data[index].title,
+                                return GestureDetector(
+                                  onTap: () {
+                                    Navigator.push(
+                                        context, MaterialPageRoute(builder: (context) => TaskAdd(
+                                      task: snapshot.data[index],
+                                    ))
+                                    );
+                                  },
+                                  child: TaskCardWidget(
+                                    title: snapshot.data[index].title,
+                                  ),
                                 );
                               },
                           ),
@@ -82,7 +91,7 @@ class _TodoState extends State<Todo> {
                 child: GestureDetector(
                   onTap: () {
                     Navigator.push(context, MaterialPageRoute(
-                        builder: (context) => TaskAdd()
+                        builder: (context) => TaskAdd(task: null),
                     ),
                     ).then((value) {
                       setState(() {
