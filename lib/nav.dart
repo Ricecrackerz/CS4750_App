@@ -1,4 +1,8 @@
+import 'package:cs4750_app/pomodoro.dart';
+import 'package:cs4750_app/todo.dart';
 import 'package:flutter/material.dart';
+
+import 'home.dart';
 
 class Nav extends StatefulWidget{
   @override
@@ -8,9 +12,9 @@ class Nav extends StatefulWidget{
 class _NavState extends State<Nav> {
   int _selectedIndex = 0;
   List<Widget> _widgetOptions = <Widget>[
-    Text('Home'),
-    Text('Todo'),
-    Text('Pomodoro'),
+    Home(),
+    Todo(),
+    Pomodoro(),
   ];
 
   void _onItemTap(int index) {
