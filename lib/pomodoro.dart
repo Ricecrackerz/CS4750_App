@@ -37,6 +37,11 @@ class _PomodoroState extends State<Pomodoro> {
   }
 
   @override
+  void initState() {
+    super.initState();
+  }
+
+  @override
   Widget build(BuildContext context) {
 
     return Scaffold(
@@ -187,7 +192,7 @@ class _PomodoroState extends State<Pomodoro> {
     }
   }
 
-  _startPomodoroCountdown () {
+  void _startPomodoroCountdown () {
     pomodoroModel = PomodoroModel.timingPomodoro;
     if(_timer != null){
       _timer.cancel();
@@ -319,6 +324,5 @@ class _PomodoroState extends State<Pomodoro> {
   }
 
   _playSound() {
-    //play
   }
 }

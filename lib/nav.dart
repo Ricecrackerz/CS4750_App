@@ -37,7 +37,7 @@ class _NavState extends State<Nav> {
         BottomNavigationBarItem(icon: Icon(Icons.emoji_food_beverage), label: 'Pomodoro'),
       ],
       backgroundColor: Color(0xFFFAF9F9),
-        selectedItemColor: Color(0xFFBEE3DB),
+        selectedItemColor: Color(0xFF89B0AE),
         unselectedItemColor: Color(0xFF555B6E),
       currentIndex: _selectedIndex,
       onTap: _onItemTap,

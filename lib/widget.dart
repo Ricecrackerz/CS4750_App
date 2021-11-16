@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:google_fonts/google_fonts.dart';
 
 class TaskCardWidget extends StatelessWidget {
   final String title;
@@ -187,6 +188,60 @@ class PomodoroButton extends StatelessWidget {
               fontSize: 15,
             ),
           ),
+      ),
+    );
+  }
+}
+
+class Quote extends StatelessWidget {
+
+  var quote = "";
+  var author = "";
+  var bgColor;
+
+  Quote({this.bgColor, this.quote, this.author});
+
+  @override
+  Widget build(BuildContext context) {
+    return Container(
+      color: bgColor,
+      padding: EdgeInsets.only(
+        left: 30,
+        right: 30,
+      ),
+      child: Column(
+        crossAxisAlignment: CrossAxisAlignment.start,
+        mainAxisAlignment: MainAxisAlignment.spaceBetween,
+        children: [
+          Spacer(),
+          Image.asset(
+            "assets/images/quote.png",
+            height: 30,
+            width: 30,
+            color: Color(0xFFFAF9F9),
+          ),
+          SizedBox(height: 30,),
+          Text(
+            quote ?? "Unknown Quote",
+            style: GoogleFonts.lato(
+              color: Color(0xFFFAF9F9),
+              fontSize: 30,
+
+            ),
+
+          ),
+          SizedBox(height: 30,),
+          Text(
+            author ?? "Unknown",
+            style: GoogleFonts.lato(
+              color: Color(0xFFFAF9F9),
+              fontWeight: FontWeight.bold,
+              fontSize: 15,
+            ),
+          ),
+          Spacer(),
+
+        ],
       ),
     );
   }
