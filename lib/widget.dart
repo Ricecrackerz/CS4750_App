@@ -117,3 +117,78 @@ class NoGlowBehaviour extends ScrollBehavior {
     return child;
   }
 }
+
+class ProgressIcons extends StatelessWidget {
+  final int total;
+  final int done;
+
+  const ProgressIcons({this.total, this.done});
+
+  @override
+  Widget build(BuildContext context) {
+    final iconSize = 50.0;
+
+    final doneIcon = Icon(
+      Icons.beenhere,
+      color: Color(0xFFFFD6BA),
+      size: iconSize,
+    );
+
+    final notDoneIcon = Icon(
+      Icons.beenhere_outlined,
+      color: Color(0xFFFFD6BA),
+      size: iconSize,
+    );
+
+    List<Icon> icons = [];
+
+    for(int i = 0; i < total; i++){
+      if(i < done){
+        icons.add(doneIcon);
+      }else {
+        icons.add(notDoneIcon);
+      }
+    }
+
+    return Padding(
+      padding: EdgeInsets.all(8.0),
+      child: Row(
+      mainAxisAlignment: MainAxisAlignment.center,
+      children: icons,
+      ),
+    );
+  }
+
+}
+
+class PomodoroButton extends StatelessWidget {
+  final Function onTap;
+  final String text;
+  PomodoroButton({this.onTap, this.text});
+
+  final ButtonStyle raisedButtonStyle = ElevatedButton.styleFrom(
+    onPrimary: Color(0xFF555B6E),
+    primary: Color(0xFFBEE3DB),
+    minimumSize: Size(200, 35),
+    padding: EdgeInsets.symmetric(horizontal: 16),
+    shape: const RoundedRectangleBorder(
+      borderRadius: BorderRadius.all(Radius.circular(2)),
+    ),
+  );
+  @override
+  Widget build(BuildContext context) {
+    return ButtonTheme(
+      child: ElevatedButton(
+        style: raisedButtonStyle,
+          onPressed: onTap,
+          child: Text(
+            text,
+            style: TextStyle(
+              fontSize: 15,
+            ),
+          ),
+      ),
+    );
+  }
+}
+
