@@ -32,30 +32,32 @@ class _HomeState extends State<Home> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: FutureBuilder<List<dynamic>>(
-        future: getPost(),
-        builder: (context, snapshot) {
-          if(snapshot.connectionState == ConnectionState.done){
-            if(snapshot.hasError){
-              return ErrorWidget(snapshot.error);
-            }
-            return PageView.builder(itemCount: snapshot.data.length,
-                itemBuilder: (context, index) {
-                var quoteModel = snapshot.data[index];
-              return Quote(
-                quote: quoteModel["text"],
-                author: quoteModel["author"],
-                bgColor: _randomColor.randomColor(
-                  colorHue: ColorHue.multiple(
-                    colorHues: [ColorHue.blue, ColorHue.purple, ColorHue.orange],
+      body: SafeArea(
+        child: FutureBuilder<List<dynamic>>(
+          future: getPost(),
+          builder: (context, snapshot) {
+            if(snapshot.connectionState == ConnectionState.done){
+              if(snapshot.hasError){
+                return ErrorWidget(snapshot.error);
+              }
+              return PageView.builder(itemCount: snapshot.data.length,
+                  itemBuilder: (context, index) {
+                  var quoteModel = snapshot.data[index];
+                return Quote(
+                  quote: quoteModel["text"],
+                  author: quoteModel["author"],
+                  bgColor: _randomColor.randomColor(
+                    colorHue: ColorHue.multiple(
+                      colorHues: [ColorHue.blue, ColorHue.purple, ColorHue.orange],
+                    ),
                   ),
-                ),
-              );
-            });
-          }else {
-            return CircularProgressIndicator();
+                );
+              });
+            }else {
+              return CircularProgressIndicator();
+            }
           }
-        }
+        ),
       ),
     );
   }

@@ -240,7 +240,12 @@ class Quote extends StatelessWidget {
             ),
           ),
           Spacer(),
-
+          Image.asset(
+            "assets/images/logo.png",
+            height: 200,
+            width: 200,
+            color: Color(0xFFFAF9F9),
+          ),
         ],
       ),
     );
