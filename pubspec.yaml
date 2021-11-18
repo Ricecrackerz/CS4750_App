@@ -29,6 +29,8 @@ dependencies:
   percent_indicator: ^2.1.9
   http: any
   random_color: ^1.0.5
+  introduction_screen: ^2.1.0
+  shared_preferences: ^2.0.8
 
   sqflite:
   path:

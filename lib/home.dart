@@ -47,6 +47,7 @@ class _HomeState extends State<Home> {
                   quote: quoteModel["text"],
                   author: quoteModel["author"],
                   bgColor: _randomColor.randomColor(
+                    colorBrightness: ColorBrightness.dark,
                     colorHue: ColorHue.multiple(
                       colorHues: [ColorHue.blue, ColorHue.purple, ColorHue.orange],
                     ),
